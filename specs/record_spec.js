@@ -14,4 +14,9 @@ describe('Record', function() {
     assert.strictEqual(actual, 'Madonna');
   });
 
+  it('should have an title', function() {
+    const actual = record1.title;
+    assert.strictEqual(actual, 'True Blue');
+  });
+
 });
