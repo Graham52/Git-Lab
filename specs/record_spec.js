@@ -10,13 +10,15 @@ describe('Record', function() {
   });
 
   it('should have an artist', function() {
-    const actual = record1.artist;
-    assert.strictEqual(actual, 'Madonna');
+    assert.strictEqual(record1.artist, 'Madonna');
   });
 
   it('should have an title', function() {
-    const actual = record1.title;
-    assert.strictEqual(actual, 'True Blue');
+    assert.strictEqual(record1.title, 'True Blue');
+  });
+
+  it('should have an genre', function() {
+    assert.strictEqual(record1.genre, 'pop');
   });
 
 });
