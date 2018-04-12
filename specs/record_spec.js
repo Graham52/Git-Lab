@@ -21,4 +21,8 @@ describe('Record', function() {
     assert.strictEqual(record1.genre, 'pop');
   });
 
+  it('should have an price', function() {
+    assert.strictEqual(record1.price, 5);
+  });
+
 });
