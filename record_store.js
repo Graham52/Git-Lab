@@ -5,8 +5,16 @@ const RecordStore = function(name, city, inventory = [], balance = 0) {
   this.balance = balance;
 }
 
-RecordStore.prototype.addRecord = function (record) {
+RecordStore.prototype.addRecord = function(record) {
   this.inventory.push(record);
 };
+
+RecordStore.prototype.getInventoryValue = function() {
+  total = 0;
+  this.inventory.forEach((record) => {
+    total += record.price;
+  });
+  return total;
+}
 
 module.exports = RecordStore;

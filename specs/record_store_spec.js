@@ -5,11 +5,11 @@ const RecordStore = require('../record_store.js');
 describe('RecordStore', function() {
 
   let store = []
+  const record1 = new Record('Offspring', 'Smash', 'Punk', 10);
+  const record2 = new Record('Greed Day', 'Dookie', 'Punk', 8);
+  const record3 = new Record('Led Zeppelin', 'IV', 'Rock', 5);
 
   beforeEach(function() {
-    const record1 = new Record('Offspring', 'Smash', 'Punk', 10);
-    const record2 = new Record('Greed Day', 'Dookie', 'Punk', 8);
-    const record3 = new Record('Led Zeppelin', 'IV', 'Rock', 5);
     store = new RecordStore(
       'Bob\'s Records',
       'Edinburgh',
@@ -26,9 +26,6 @@ describe('RecordStore', function() {
   });
 
   it('should have records', function() {
-    const record1 = new Record('Offspring', 'Smash', 'Punk', 10);
-    const record2 = new Record('Greed Day', 'Dookie', 'Punk', 8);
-    const record3 = new Record('Led Zeppelin', 'IV', 'Rock', 5);
     assert.deepStrictEqual(store.inventory, [record1, record2, record3]);
   });
 
@@ -37,11 +34,13 @@ describe('RecordStore', function() {
   });
 
   it('should add records', function() {
-    const record1 = new Record('Offspring', 'Smash', 'Punk', 10);
-    const record2 = new Record('Greed Day', 'Dookie', 'Punk', 8);
-    const record3 = new Record('Led Zeppelin', 'IV', 'Rock', 5);
     const record4 = new Record('Bloodhound Gang', 'Bad touch', 'Pop/rap', 1);
     store.addRecord(record4);
     assert.deepStrictEqual(store.inventory, [record1, record2, record3, record4]);
   });
+
+  it('should get the inventory value', function() {
+    assert.strictEqual(store.getInventoryValue(), 23);
+  });
+
 });
