@@ -21,19 +21,27 @@ describe('RecordStore', function() {
     assert.strictEqual(store.name, 'Bob\'s Records');
   });
 
-  xit('should have a city', function() {
-
+  it('should have a city', function() {
+    assert.strictEqual(store.city, 'Edinburgh');
   });
 
-  xit('should have records', function() {
-
+  it('should have records', function() {
+    const record1 = new Record('Offspring', 'Smash', 'Punk', 10);
+    const record2 = new Record('Greed Day', 'Dookie', 'Punk', 8);
+    const record3 = new Record('Led Zeppelin', 'IV', 'Rock', 5);
+    assert.deepStrictEqual(store.inventory, [record1, record2, record3]);
   });
 
-  xit('should have a balance', function() {
-
+  it('should have a balance', function() {
+    assert.strictEqual(store.balance, 5000);
   });
 
-  xit('should add records', function() {
-
+  it('should add records', function() {
+    const record1 = new Record('Offspring', 'Smash', 'Punk', 10);
+    const record2 = new Record('Greed Day', 'Dookie', 'Punk', 8);
+    const record3 = new Record('Led Zeppelin', 'IV', 'Rock', 5);
+    const record4 = new Record('Bloodhound Gang', 'Bad touch', 'Pop/rap', 1);
+    store.addRecord(record4);
+    assert.deepStrictEqual(store.inventory, [record1, record2, record3, record4]);
   });
 });
